@@ -1,0 +1,157 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #ffb1de;
+    color: #d63384;
+    text-align: center;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  h1 {
+    margin-top: 100px;
+    font-size: 3rem;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  button {
+    background: #d63384;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #c2185b;
+  }
+  
+  #messageSection {
+    display: none;
+    margin-top: 60px;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  /* Section Styles */
+  .section {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    margin-top: 50px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .left-side,
+  .right-side {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Fading Text */
+  .fading-text {
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s, transform 1s;
+  }
+  
+  .fading-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Image Grid Styles */
+  .images-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    justify-items: center;
+  }
+  
+  .images-grid img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .images-grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Sunflower Styles */
+  .sunflower {
+    position: absolute;
+    top: -50px;
+    animation: float 60s ease-in forwards;
+    opacity: 0.9;
+    font-size: 20px;
+    pointer-events: none;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    from {
+      transform: translateY(0) rotate(0deg);
+    }
+    to {
+      transform: translateY(var(--float-distance)) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .left-side,
+    .right-side {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .fading-text {
+      text-align: center;
+    }
+  
+    .images-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .images-grid img {
+      max-width: 90%;
+    }
+  }
+  
